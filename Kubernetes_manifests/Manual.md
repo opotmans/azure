@@ -19,3 +19,4 @@ Total 4 (delta 0), réutilisés 0 (delta 0), réutilisés du pack 0
 To https://github.com/opotmans/azure.git
  * [new branch]      master -> master
 La branche 'master' est paramétrée pour suivre la branche distante 'master' depuis 'origin'.
+Copy repository
