@@ -22,6 +22,9 @@ spec:
     volumeMounts:
     - mountPath: /data
       name: www-data
+  dnsConfig:
+    nameservers:
+      - 8.8.8.8
   containers:
   - name: nginx
     image: nginx
@@ -29,6 +32,10 @@ spec:
     - mountPath: /srv/www
       name: www-data
       readOnly: true
+  dnsConfig:
+    nameservers:
+      - 8.8.8.8
   volumes:
   - name: www-data
     emptyDir: {}
+  
