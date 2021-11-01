@@ -1,0 +1,27 @@
+# https://kubernetes.io/docs/tutorials/k8s201/
+# https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+# identify the deployment object that is a replicaset of x pods installed based on the template
+  name: nginx-deployment
+spec:
+  selector:
+# the replicaset must linked to the template of the pod creation so, it matches the labels of the 
+    matchLabels:
+      app: nginx_template_pod
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx_template_pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.8
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 80
